@@ -10,7 +10,61 @@ Repository to group all the basics information towards the mission of mastering 
 
 # Hardware
 
-[TBW]
+I bought 5 ESP32-WROOM-32 from [ML](https://produto.mercadolivre.com.br/MLB-2965077293-kit-com-5-un-esp32-doit-devkit-com-esp32-wroom-32-_JM#is_advertising=true&position=2&search_layout=grid&type=pad&tracking_id=46f1bd68-82e7-451e-a4d9-a6f2c1ea48af&is_advertising=true&ad_domain=VQCATCORE_LST&ad_position=2&ad_click_id=NjlhNzU5MjUtMGNlNi00OTU2LTkxOTUtYjM4MjZjNmI5Zjcw).
+
+ESP32 DEVKITV1 is equivalent to NodeMCU-32S. The USB driver depends on the Bridge (CI) used. There is CP210x, CH340. Mine is CH9102x.
+
+## ESP32 DEVKITV1 Pinout
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/db79070c-5c90-4e5f-8d61-16d919c0a863)
+
+Image from [RandomNerdTutorials](https://randomnerdtutorials.com/esp32-doit-devkit-v1-board-pinout-30-gpios-copy/).
+
+## ESP32-D0WD-V3
+
+* Wi-Fi
+  - 802.11b/g/n
+  - 802.11n (2.4 GHz), up to 150 Mbps
+* Bluetooth®
+  - Compliant with Bluetooth v4.2 BR/EDR and Bluetooth LE specifications
+* Core
+  - Xtensa® single-/dual-core 32-bit LX6 microprocessor(s)
+  - CoreMark® score:
+    - 1 core at 240 MHz: 504.85 CoreMark; 2.10 CoreMark/MHz
+    - 2 cores at 240 MHz: 994.26 CoreMark; 4.14 CoreMark/MHz
+  - 448 KB ROM
+  - 520 KB SRAM
+  - 16 KB SRAM in RTC
+  - QSPI supports multiple flash/SRAM chips
+* Clocks
+  - Internal 8 MHz oscillator with calibration
+  - Internal RC oscillator with calibration
+  - External 2 MHz ~ 60 MHz crystal oscillator (40 MHz only for Wi-Fi/Bluetooth functionality)
+  - External 32 kHz crystal oscillator for RTC with calibration
+* Advanced Peripheral Interfaces
+  - 34 × programmable GPIOs
+    - 5 strapping GPIOs
+    - 6 input-only GPIOs
+    - 6 GPIOs needed for in-package flash/PSRAM (ESP32-D0WDR2-V3, ESP32-U4WDH)
+  - 12-bit SAR ADC up to 18 channels
+  - 2 × 8-bit DAC
+  - 10 × touch sensors
+  - 4 × SPI
+  - 2 × I2S
+  - 2 × I2C
+  - 3 × UART
+  - Motor PWM
+  - LED PWM up to 16 channels
+* Security
+  - Secure boot
+  - Flash encryption
+  - 1024-bit OTP, up to 768-bit for customers
+  - Cryptographic hardware acceleration:
+    - AES
+    - Hash (SHA-2)
+    - RSA
+    - ECC
+    - Random Number Generator (RNG)
 
 # ESP-IDF 5.1 CMD
 
