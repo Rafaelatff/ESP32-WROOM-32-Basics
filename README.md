@@ -21,7 +21,7 @@ Repository to group all the basics information towards the mission of mastering 
 
 It returned me a few information of the board:
 
-* Chip is ESP32-D0WD-V3 (revision v3.0)
+* Chip is [ESP32-D0WD-V3 (revision v3.0)](https://www.espressif.com/sites/default/files/documentation/esp32-s2_datasheet_en.pdf).
 * Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
 * Crystal is 40MHz
 * MAC: 48:e7:29:ca:f9:78
@@ -34,6 +34,33 @@ We go to the blink code, open by using a text editor e changed the pin to 2.
 Then we go through all the steps again. The results:
 
 ![WhatsApp Video 2023-10-28 at 16 37 20](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/f994becf-a74a-4b49-aafb-fe4ee690e5a8)
+
+# Visual Studio Code
+
+I found a lot of throuble by trying to set the Eclipse IDE, so I decided to configure the VSCode first. I had the impression that nowdays the Eclipse hasn't the required suport.
+
+* Download and install the [VS Code](https://code.visualstudio.com/docs/).
+* Configure the extensions. I installed the **Python**, **C/C++**, **Shortcut Menu Bar** and **PlatformIO**.
+* Let's open a project by: File -> Open Folder... -> 'C:\Espressif\frameworks\esp-idf-v5.1.1\examples\get-started\blink'.
+* Before compiling or anything we need to save the workspace: File -> Save Workspace As... -> blink.code-workspace -> Save (inside the blink folder).
+
+We need to configure the terminal now. For that, we followed [this tutorial](https://www.youtube.com/watch?v=N93RvZz6dEc).
+
+* Press F1 and search for the **settings.json** (choose the User settings).
+* Add the line ```"terminal.integrated.defaultProfile.windows": "Command Prompt",```.
+* Then also add: ```"terminal.integrated.profiles.windows": {``` and press TAB so it will auto complete itself.
+* Add the following lines:
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/a736d434-f51b-41d3-8840-ef5b5b57ea09)
+
+* The second argument is the address for the **idf_cmd_init.bat**, inside the Espressif folder (with the inverted slashes /) plus, the code found in the Properties of the **ESP-IDF 5.1 CMD** desktop shortcut icon.
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/ca0deb7f-503b-4568-bb38-82b9f137d070)
+
+* Save and close the **settings.json** TAB.
+* Let's open the terminal by going to: Terminal -> New Terminal.
+* Type ```idf.py build``` to build.
+* Type ```idf.py -p COM4 flash``` to programn the ESP-WROOM-32 board. 
 
 # Eclipse
 
