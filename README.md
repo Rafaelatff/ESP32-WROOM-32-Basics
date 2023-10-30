@@ -114,7 +114,21 @@ We need to configure the terminal now. For that, we followed [this tutorial](htt
 * Save and close the **settings.json** TAB.
 * Let's open the terminal by going to: Terminal -> New Terminal.
 * Type ```idf.py build``` to build.
-* Type ```idf.py -p COM4 flash``` to programn the ESP-WROOM-32 board. 
+* Type ```idf.py -p COM4 flash``` to programn the ESP-WROOM-32 board.
+
+## Creating a new project
+Now we need to configure the C/C++ paths for the includes.
+
+* Click to Edit "includePath" setting.
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/1d5f5832-6e6b-4d12-a3d2-283deb541126)
+
+* Once the option for Edit "includePath" setting is selected. It will appear a few options on the project tree. Go to '.vscode' -> 'c_cpp_properties.json' and add the Espressif path to the includePath.
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/051bc2d4-4812-430f-9f13-69e946a56276)
+
+
+This repository will contain a template file.
 
 # Eclipse
 
