@@ -68,6 +68,8 @@ Image from [RandomNerdTutorials](https://randomnerdtutorials.com/esp32-doit-devk
 
 # ESP-IDF 5.1 CMD
 
+IDF - IoT Development Framework
+
 * First we go to a project folder by typing its path ```cd examples\get-started\blink```.
 * Then we compile the code ```idf.py build```. First time it happens it takes a lot of time.
 * Connect the ESP32-WROOM-32 board to one of the USBs. Check in the Computer Management board the in which COM the board is connected.
@@ -123,7 +125,26 @@ We need to configure the terminal now. For that, we followed [this tutorial](htt
 ## Creating a new project
 Now we need to configure the C/C++ paths for the includes.
 
-* Click to Edit "includePath" setting.
+* To create a new project, go to 'File' -> 'Open Folder...' -> Create a new folder and select it (in our case it will be GPIO_Setting).
+* Open a terminal and type `idf.py create-project -p . <project_name>`, in our case `<project_name>` will be `GPIO_Setting`. It will add to the tree, the **CMakeLists.txt** file and the folder **main** containing the **GPIO_Setting.c** file and also **CMakeLists.txt**.
+* Now we access the **MenuConfig** to configure . Type on the terminal `start idf.py menuconfig`.
+* Let's configure the clock speed of our board by going to 'Component config --->' -> 'Hardware Settings' -> 'Main XTAL Config' and 'Main XTAL frequency' and set it to '(X) 40 MHz'.
+* Change the CPU frequency to 240 MHz by going to 'Component config --->' -> 'ESP System Settings' -> 'CPU frequency' -> '(X) 240 MHz'.
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/fd2e4bea-55fc-4ef8-a3e6-1cf86a43cbdb)
+
+* The ESP32 DEVKITV1 has 4 MB of flash and default configuration is set to only 2 MB. To fix that we will go to 'Seruak fkashers config' -> 'Flash size' -> '(X) 4 MB'. Press 'esc' to quit and before leaving confirm saving the configuration. On the project tree, the **sdkconfig** file was created with the saved configuration and  the **sdkconfig.old** with the default, not changed configuration.
+* Compile the project by `idf.py build`.
+* Program the board by `idf.py -p COM16 flash`.
+* As good practice, we can create a 'verion.txt' file, type the firmware version and save. It will lated return on the terminal 'cpu_start: App version: 1.0'.
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/c7218501-5646-448e-b0f1-0d57fe62dbdd)
+
+NOTE: The file that is programmed inside the uC, is the 'bootloader.bin', found at the 'build' folder of the tree. The 'GPIO_Setting.bin' (<project_name>.bin) is the project binary file to be loaded un the uC. The 'GPIO_Setting.elf' (<project_name>.elf) it the file used for debugging the firmware.
+
+The documentation to help writing the GPIO code can be found on [Espressif website](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/gpio.html).
+
+* On 'GPIO_Settint.c' we will add the driver by typing '#include "driver/gpio.h"'. Then we need to click to Edit "includePath" setting.
 
 ![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/1d5f5832-6e6b-4d12-a3d2-283deb541126)
 
@@ -131,6 +152,7 @@ Now we need to configure the C/C++ paths for the includes.
 
 ![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/051bc2d4-4812-430f-9f13-69e946a56276)
 
+* When calling the function 'gpio_set_direction()', just right-click on the function and select 'Go to definition'/'Go to declaration' to learn more about the function. 
 
 This repository will contain a template file.
 
@@ -192,3 +214,12 @@ You can fix that by, clicking on the 'USB-Enhanced-SERIAL CH9102 (COM5)' Propert
 
 After that, all 5 boards worked fine.
 I also had problem with my USB cable (that short circuited input and GND), but computer + system managed that (it turn off usb once the surge happened). Changed the cable and all returned to work properly.
+
+# Bibliografy
+
+All the links that help me through the process of ESP32 learning.
+
+* [ESP32 - Getting Started with ESP-IDF using Visual Studio Code [Easiest Method]](https://www.youtube.com/watch?v=5IuZ-E8Tmhg)
+* [QUICK FIX for IDF Terminal inside VS CODE](https://www.youtube.com/watch?v=N93RvZz6dEc)
+* [ESP32 - How to create your First ESP IDF project (From Scratch)](https://www.youtube.com/watch?v=oHHOCdmLiII)
+* [ESP32 & could not open port ‘COM5’: PermissionError(13, ‘Access is denied.’, None, 5)](https://community.platformio.org/t/esp32-could-not-open-port-com5-permissionerror-13-access-is-denied-none-5/22396)
