@@ -89,6 +89,10 @@ Then we go through all the steps again. The results:
 
 ![WhatsApp Video 2023-10-28 at 16 37 20](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/f994becf-a74a-4b49-aafb-fe4ee690e5a8)
 
+Note: To have access to the Espressif IDE, during installation tick the option Espressif-IDE during the Select Components window:
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/8d153378-0724-4931-8f08-48574897612b)
+
 # Visual Studio Code
 
 I found a lot of throuble by trying to set the Eclipse IDE, so I decided to configure the VSCode first. I had the impression that nowdays the Eclipse hasn't the required suport.
