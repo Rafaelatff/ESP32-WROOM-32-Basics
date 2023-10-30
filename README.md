@@ -152,9 +152,37 @@ The documentation to help writing the GPIO code can be found on [Espressif websi
 
 ![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/051bc2d4-4812-430f-9f13-69e946a56276)
 
-* When calling the function 'gpio_set_direction()', just right-click on the function and select 'Go to definition'/'Go to declaration' to learn more about the function. 
+* When calling the function 'gpio_set_direction()', just right-click on the function and select 'Go to definition'/'Go to declaration' to learn more about the function. Doing the same thing for expected received variable, we can see the options. Set and control the GPIOS.
 
-This repository will contain a template file.
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/8dc7f0bf-c791-435c-854b-b6752dad4f50)
+
+```c
+#include <stdio.h>
+#include "driver/gpio.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
+void app_main(void)
+{
+    // GPIO Settings (GPIO22 as input, GPIO2 as output)
+    gpio_set_direction(GPIO_NUM_22,GPIO_MODE_INPUT);
+    gpio_set_pull_mode(PIO_NUM_22,GPIO_PULLUP_ONLY);
+
+    gpio_set_direction(GPIO_NUM_2,GPIO_MODE_OUTPUT);
+
+    while(1){
+        // GPIO Controlling
+        if (gpio_get_level(PIO_NUM_22)) {
+            // Do nothing, to be implemented
+        }
+        gpio_set_level(GPIO_NUM_2,0);
+        vTaskDelay(2400); // From freeRTOS lib
+        gpio_set_level(GPIO_NUM_2,1);
+        vTaskDelay(2400);
+    }
+}
+```
+* Build, Flash and check the results.
 
 # Eclipse
 
