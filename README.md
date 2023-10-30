@@ -161,4 +161,34 @@ we’re going to reconfigure Eclipse to find our toolchain
 
 ![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/4e512656-7454-4a8a-b8ff-5262b6a169e2)
 
+# Issues
 
+## Error at run_serial_tool.cmake:66
+
+In my personal computer, I had no problemns programming the ESP boards. At company I had the following issue:
+When trying to program the ESP32 board by using `idf.py -p COM5 flash` and it return the following error (with the 5 boards):
+
+```
+A fatal error occurred: Could not open COM5, the port is busy or doesn't exist.
+(could not open port 'COM5': PermissionError(13, 'Access is denied.', None, 5))
+
+CMake Error at run_serial_tool.cmake:66 (message):
+
+  C:/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/esptool/esptool.py;--chip;esp32
+  failed.
+
+FAILED: CMakeFiles/flash C:/Espressif/frameworks/esp-idf-v5.1.1/examples/get-started/blink/build/CMakeFiles/flash
+cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.1.1\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.1.1 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Espressif/frameworks/esp-idf-v5.1.1/examples/get-started/blink/build -P C:/Espressif/frameworks/esp-idf-v5.1.1/components/esptool_py/run_serial_tool.cmake"
+ninja: build stopped: subcommand failed.
+ninja failed with exit code 1, output of the command is in the C:\Espressif\frameworks\esp-idf-v5.1.1\examples\get-started\blink\build\log\idf_py_stderr_output_13376 and C:\Espressif\frameworks\esp-idf-v5.1.1\examples\get-started\blink\build\log\idf_py_stdout_output_13376
+```
+And the COM is the correct one:
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/72111334-467d-43f7-8abe-893c11c358cb)
+
+You can fix that by, clicking on the 'USB-Enhanced-SERIAL CH9102 (COM5)' Properties, then going to the TAB 'Port Settings' -> 'Advanced...', and changing the COM port:
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/acf01de6-b263-48c9-a34a-e0c6b939ea15)
+
+After that, all 5 boards worked fine.
+I also had problem with my USB cable (that short circuited input and GND), but computer + system managed that (it turn off usb once the surge happened). Changed the cable and all returned to work properly.
