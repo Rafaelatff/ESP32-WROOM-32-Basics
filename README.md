@@ -4,7 +4,7 @@ Repository to group all the basics information towards the mission of mastering 
 # Goals
 
 - [x] 1. Buy/ Test modules / Rate on ML.
-- [ ] 2. Create and documentate configuration on Visual Studio Code.
+- [x] 2. Create and documentate configuration on Visual Studio Code.
 - [ ] 3. Create and documentate configuration on Espressif IDE.
 
 # Hardware
@@ -171,23 +171,29 @@ void app_main(void)
 {
     // GPIO Settings (GPIO22 as input, GPIO2 as output)
     gpio_set_direction(GPIO_NUM_22,GPIO_MODE_INPUT);
-    gpio_set_pull_mode(PIO_NUM_22,GPIO_PULLUP_ONLY);
+    gpio_set_pull_mode(GPIO_NUM_22,GPIO_PULLUP_ONLY);
 
     gpio_set_direction(GPIO_NUM_2,GPIO_MODE_OUTPUT);
 
     while(1){
         // GPIO Controlling
-        if (gpio_get_level(PIO_NUM_22)) {
+        if (gpio_get_level(GPIO_NUM_22)) {
             // Do nothing, to be implemented
         }
-        gpio_set_level(GPIO_NUM_2,0);
-        vTaskDelay(2400); // From freeRTOS lib
-        gpio_set_level(GPIO_NUM_2,1);
-        vTaskDelay(2400);
+        //gpio_set_level(GPIO_NUM_2,0);
+        //vTaskDelay(2400); // From freeRTOS lib
+        gpio_set_level(GPIO_NUM_2,1); // To test - GPIO2 is connected to the anode of blue led.
+        //vTaskDelay(2400);
     }
 }
 ```
 * Build, Flash and check the results.
+
+**Note: I was forgeting of saving the code before building (Ctrl + S). It is very important to do that!!**
+
+I only leave the code to light the blue LED here. For input, we need the pront-on-board and it is not the moment to study timer right now. As results: 
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/1fd5ca22-38b3-49ae-976f-29f15341de43)
 
 # Eclipse
 
