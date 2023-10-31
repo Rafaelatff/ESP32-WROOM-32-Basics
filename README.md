@@ -3,10 +3,9 @@ Repository to group all the basics information towards the mission of mastering 
 
 # Goals
 
-- [ ] 1. Buy/ Install Espressif IDF/ Test/
-- [x] 2. 
-- [x] 3. 
-- [x] 4. 
+- [x] 1. Buy/ Test modules / Rate on ML.
+- [ ] 2. Create and documentate configuration on Visual Studio Code.
+- [ ] 3. Create and documentate configuration on Espressif IDE.
 
 # Hardware
 
@@ -19,6 +18,12 @@ ESP32 DEVKITV1 is equivalent to NodeMCU-32S. The USB driver depends on the Bridg
 ![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/db79070c-5c90-4e5f-8d61-16d919c0a863)
 
 Image from [RandomNerdTutorials](https://randomnerdtutorials.com/esp32-doit-devkit-v1-board-pinout-30-gpios-copy/).
+
+## ESP32 DEVKITV1 Schematic
+
+![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/666516b0-06d4-4319-88c7-725b2365b181)
+
+Imagem edited from [embedded-systems-design.github.io](https://embedded-systems-design.github.io/overview-of-the-esp32-devkit-doit-v1/SchematicsforESP32.pdf).
 
 ## ESP32-D0WD-V3
 
