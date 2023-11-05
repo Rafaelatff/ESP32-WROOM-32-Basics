@@ -8,7 +8,7 @@ Repository to group all the basics information towards the mission of mastering 
 - [ ] 3. Create and documentate configuration on Espressif IDE.
 - [ ] 4. Repositorie for [LOG and timmed funcions, ](https://github.com/Rafaelatff/ESP32-WROOM-32-ESP_LOG).
 - [ ] 5. Repositorie for [Digital Input, Digital Output, Analog Input and PWM Output](https://github.com/Rafaelatff/ESP32-WROOM-32-DIG_AN_IO).
-- [ ] 6. Repositorie for WiFi Configuration.
+- [ ] 6. Repositorie for [ESP-NOW protocol](https://github.com/Rafaelatff/ESP32-WROOM-32-ESP-NOW).
 - [ ] 7. Repositorie for [TBC].
 - [ ] 8. Repositorie for [TBC].
 - [ ] 9. Repositorie for [TBC].
