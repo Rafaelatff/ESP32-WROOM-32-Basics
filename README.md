@@ -10,8 +10,8 @@ Repository to group all the basics information towards the mission of mastering 
 - [ ] 5. Repositorie for [Digital Input, Digital Output, Analog Input and PWM Output](https://github.com/Rafaelatff/ESP32-WROOM-32-DIG_AN_IO).
 - [x] 6. Repositorie for [ESP-NOW protocol](https://github.com/Rafaelatff/ESP32-WROOM-32-ESP-NOW).
 - [x] 7. Repositorie for [Another ESP-NOW example](https://github.com/Rafaelatff/ESP32-ESPNOW-EXAMPLE-2).
-- [ ] 8. Repositorie for [Network scan](https://github.com/Rafaelatff/ESP32-SCAN).
-- [ ] 9. other stuff?
+- [x] 8. Repositorie for [Network scan](https://github.com/Rafaelatff/ESP32-SCAN).
+- [ ] 9. Repositorie for [ESP AP and STA configurtion](https://github.com/Rafaelatff/esp-ap-and-ap-sta).
 - [ ] 10. Repositorie for [ESP IZ POC](https://github.com/Rafaelatff/ESP32-IZ-POC).
 - [ ] 11. Repositorie for [TBC].
 
@@ -146,7 +146,7 @@ Now we need to configure the C/C++ paths for the includes.
 
 ![image](https://github.com/Rafaelatff/ESP32-WROOM-32-Basics/assets/58916022/fd2e4bea-55fc-4ef8-a3e6-1cf86a43cbdb)
 
-* The ESP32 DEVKITV1 has 4 MB of flash and default configuration is set to only 2 MB. To fix that we will go to 'Seruak fkashers config' -> 'Flash size' -> '(X) 4 MB'. Press 'esc' to quit and before leaving confirm saving the configuration. On the project tree, the **sdkconfig** file was created with the saved configuration and  the **sdkconfig.old** with the default, not changed configuration.
+* The ESP32 DEVKITV1 has 4 MB of flash and default configuration is set to only 2 MB. To fix that we will go to 'Serial flasher config' -> 'Flash size' -> '(X) 4 MB'. Press 'esc' to quit and before leaving confirm saving the configuration. On the project tree, the **sdkconfig** file was created with the saved configuration and  the **sdkconfig.old** with the default, not changed configuration.
 * Compile the project by `idf.py build`.
 * Program the board by `idf.py -p COM16 flash`.
 * As good practice, we can create a 'verion.txt' file, type the firmware version and save. It will lated return on the terminal 'cpu_start: App version: 1.0'.
