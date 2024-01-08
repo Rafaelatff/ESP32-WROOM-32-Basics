@@ -11,9 +11,10 @@ Repository to group all the basics information towards the mission of mastering 
 - [x] 6. Repositorie for [ESP-NOW protocol](https://github.com/Rafaelatff/ESP32-WROOM-32-ESP-NOW).
 - [x] 7. Repositorie for [Another ESP-NOW example](https://github.com/Rafaelatff/ESP32-ESPNOW-EXAMPLE-2).
 - [x] 8. Repositorie for [Network scan](https://github.com/Rafaelatff/ESP32-SCAN).
-- [ ] 9. Repositorie for [ESP AP and STA configurtion](https://github.com/Rafaelatff/esp-ap-and-ap-sta).
+- [x] 9. Repositorie for [ESP AP and STA configurtion](https://github.com/Rafaelatff/esp-ap-and-ap-sta).
 - [ ] 10. Repositorie for [ESP IZ POC](https://github.com/Rafaelatff/ESP32-IZ-POC).
-- [ ] 11. Repositorie for [TBC].
+- [x] 11. Repositorie for [Socket, UDP and broadcast messages](https://github.com/Rafaelatff/ESP32-STA-UDP-Socket).
+- [ ] 12. Repositorie for [Mesh network](https://github.com/Rafaelatff/ESP32-Mesh).
 
 # Hardware
 
